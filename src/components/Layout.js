@@ -4,8 +4,6 @@ import Toggle from './Toggle';
 import Helmet from 'react-helmet';
 
 import { rhythm, scale } from '../utils/typography';
-import sun from '../assets/sun.png';
-import moon from '../assets/moon.png';
 
 class Layout extends React.Component {
   state = {
@@ -83,7 +81,7 @@ class Layout extends React.Component {
           meta={[
             {
               name: 'theme-color',
-              content: this.state.theme === 'light' ? '#ffa8c5' : '#282c35',
+              content: this.state.theme === 'light' ? '#ffa8c5' : '#000000',
             },
           ]}
         />
@@ -106,26 +104,6 @@ class Layout extends React.Component {
             {this.renderHeader()}
             {this.state.theme !== null ? (
               <Toggle
-                icons={{
-                  checked: (
-                    <img
-                      src={moon}
-                      width="16"
-                      height="16"
-                      role="presentation"
-                      style={{ pointerEvents: 'none' }}
-                    />
-                  ),
-                  unchecked: (
-                    <img
-                      src={sun}
-                      width="16"
-                      height="16"
-                      role="presentation"
-                      style={{ pointerEvents: 'none' }}
-                    />
-                  ),
-                }}
                 checked={this.state.theme === 'dark'}
                 onChange={e =>
                   window.__setPreferredTheme(
