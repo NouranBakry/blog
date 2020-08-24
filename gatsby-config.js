@@ -1,15 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: 'Nouran Bakry',
+    title: 'CodeBlock',
     author: 'Nouran Bakry',
-    description: 'Software Engineer',
-    siteUrl: 'https://overreacted.io',
+    description: 'My attempt at blogging',
+    siteUrl: 'https://codeblock.io',
     social: {
-      twitter: '@dan_abramov',
+      twitter: '@nouranbakry_',
     },
   },
-  pathPrefix: '/',
+  pathPrefix: '/blog',
   plugins: [
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -80,7 +81,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at overreacted.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at codeblock.io. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 
@@ -126,47 +127,16 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Dan Abramov's Overreacted Blog RSS Feed",
+            title: "Nouran Bakry's CodeBlock Blog",
           },
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-ebook`,
-      options: {
-        filename: 'overreacted-ebook.epub',
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                author
-              }
-            }
-            allMarkdownRemark(
-              sort: { fields: frontmatter___date, order: ASC },
-              filter: { fields: { langKey: { eq: "en" } } }
-            ) {
-              edges {
-                node {
-                  id
-                  fileAbsolutePath
-                  rawMarkdownBody
-                  frontmatter {
-                    title
-                    date
-                  }
-                }
-              }
-            }
-          }`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Overreacted`,
-        short_name: `Overreacted`,
+        name: `Codeblock`,
+        short_name: `Codeblock`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,

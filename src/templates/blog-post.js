@@ -17,8 +17,8 @@ import {
   replaceAnchorLinksByLanguage,
 } from '../utils/i18n';
 
-const GITHUB_USERNAME = 'gaearon';
-const GITHUB_REPO_NAME = 'overreacted.io';
+const GITHUB_USERNAME = 'NouranBaky';
+const GITHUB_REPO_NAME = 'codeblock.io';
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`;
@@ -137,7 +137,7 @@ class BlogPostTemplate extends React.Component {
       enSlug.length - 1
     )}/index${lang === 'en' ? '' : '.' + lang}.md`;
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-      `https://overreacted.io${enSlug}`
+      `https://codeblock.io${enSlug}`
     )}`;
 
     return (
@@ -211,7 +211,7 @@ class BlogPostTemplate extends React.Component {
               }}
               to={'/'}
             >
-              Overreacted
+              Codeblock
             </Link>
           </h3>
           <Bio />
