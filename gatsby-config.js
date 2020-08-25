@@ -8,7 +8,7 @@ module.exports = {
       twitter: '@nouranbakry_',
     },
   },
-  pathPrefix: '/blog',
+  pathPrefix: '/codeblock.io',
   plugins: [
     `gatsby-plugin-offline`,
     {
