@@ -1,21 +1,21 @@
-import { Link, graphql } from 'gatsby';
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
+import { Link, graphql } from "gatsby";
+import { formatPostDate, formatReadingTime } from "../utils/helpers";
 
-import Bio from '../components/Bio';
-import Footer from '../components/Footer';
-import Layout from '../components/Layout';
-import Panel from '../components/Panel';
-import React from 'react';
-import SEO from '../components/SEO';
-import get from 'lodash/get';
-import { rhythm } from '../utils/typography';
+import Bio from "../components/Bio";
+import Footer from "../components/Footer";
+import Layout from "../components/Layout";
+import Panel from "../components/Panel";
+import React from "react";
+import SEO from "../components/SEO";
+import get from "lodash/get";
+import { rhythm } from "../utils/typography";
 
 class BlogIndexTemplate extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const langKey = this.props.pageContext.langKey;
 
-    const posts = get(this, 'props.data.allMarkdownRemark.edges');
+    const posts = get(this, "props.data.allMarkdownRemark.edges");
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -39,19 +39,19 @@ class BlogIndexTemplate extends React.Component {
           )} */}
 
           {posts.map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug;
+            const title = get(node, "frontmatter.title") || node.fields.slug;
             return (
               <article key={node.fields.slug}>
                 <header>
                   <h3
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
+                      fontFamily: "Montserrat, sans-serif",
                       fontSize: rhythm(1),
-                      marginBottom: rhythm(1 / 4),
+                      marginBottom: rhythm(1 / 4)
                     }}
                   >
                     <Link
-                      style={{ boxShadow: 'none' }}
+                      style={{ boxShadow: "none" }}
                       to={node.fields.slug}
                       rel="bookmark"
                     >

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default class HTML extends React.Component {
   render() {
@@ -46,7 +46,7 @@ export default class HTML extends React.Component {
 
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
               })();
-            `,
+            `
             }}
           />
           {this.props.preBodyComponents}
@@ -68,5 +68,5 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
+  postBodyComponents: PropTypes.array
 };

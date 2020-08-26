@@ -1,11 +1,11 @@
 // gatsby-browser.js
-import React from 'react';
+import React from "react";
 
 // Forked Gatsby default to not remount on switches between
 // translated versions of the same page.
 export function replaceComponentRenderer({ props, loader }) {
   return React.createElement(props.pageResources.component, {
-    ...props,
+    ...props
 
     // Gatsby default is:
     // key: props.pageResources.page.path,
@@ -17,7 +17,7 @@ export function replaceComponentRenderer({ props, loader }) {
 function countSlashes(url) {
   let n = 0;
   for (let i = 0; i < url.length; i++) {
-    if (url[i] === '/') {
+    if (url[i] === "/") {
       n++;
     }
   }
@@ -40,8 +40,8 @@ function shouldPreserveScrollBetween(oldPathname, newPathname) {
     (countSlashes(oldPathname) === 3 &&
       countSlashes(newPathname) === 3 &&
       // /stuff/ === /stuff/
-      oldPathname.substr(oldPathname.substr(1).indexOf('/') + 1) ===
-        newPathname.substr(newPathname.substr(1).indexOf('/') + 1))
+      oldPathname.substr(oldPathname.substr(1).indexOf("/") + 1) ===
+        newPathname.substr(newPathname.substr(1).indexOf("/") + 1))
   ) {
     return true;
   }
@@ -51,19 +51,19 @@ function shouldPreserveScrollBetween(oldPathname, newPathname) {
 // Forked to not update scroll on transitions between translations.
 // Sadness. I have to override a *plugin* because it already has its own logic,
 // and Gatsby just ignores mine, lol. TODO: fork this plugin?
-let oldShouldUpdateScroll = require('gatsby-remark-autolink-headers/gatsby-browser')
+let oldShouldUpdateScroll = require("gatsby-remark-autolink-headers/gatsby-browser")
   .shouldUpdateScroll;
-if (typeof oldShouldUpdateScroll !== 'function') {
-  throw new Error('No monkeypatching today :-(');
+if (typeof oldShouldUpdateScroll !== "function") {
+  throw new Error("No monkeypatching today :-(");
 }
-require('gatsby-remark-autolink-headers/gatsby-browser').shouldUpdateScroll = function shouldUpdateScroll({
+require("gatsby-remark-autolink-headers/gatsby-browser").shouldUpdateScroll = function shouldUpdateScroll({
   prevRouterProps,
-  routerProps,
+  routerProps
 }) {
   const { pathname, hash } = routerProps.location;
   if (prevRouterProps) {
     const {
-      location: { pathname: oldPathname },
+      location: { pathname: oldPathname }
     } = prevRouterProps;
     if (shouldPreserveScrollBetween(oldPathname, pathname)) {
       return false;

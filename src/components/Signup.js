@@ -1,30 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import './Signup.css';
+import "./Signup.css";
 
-const REACT_COMPONENTS_FORM_ID = '1181861';
-const OVERREACTED_FORM_ID = '812047';
+const REACT_COMPONENTS_FORM_ID = "1181861";
+const OVERREACTED_FORM_ID = "812047";
 
 class Signup extends React.Component {
   render() {
     let form,
       { cta } = this.props;
     switch (cta) {
-      case 'react':
+      case "react":
         form = {
           id: REACT_COMPONENTS_FORM_ID,
-          title: 'Learn to Build Resilient React Components',
+          title: "Learn to Build Resilient React Components",
           subTitle:
-            'Get a one week email course and learn how I think about writing React components based on 4 Principles.',
-          buttonText: 'Start Learning',
+            "Get a one week email course and learn how I think about writing React components based on 4 Principles.",
+          buttonText: "Start Learning"
         };
         break;
       default:
         form = {
           id: OVERREACTED_FORM_ID,
-          title: 'Subscribe to the Newsletter',
-          subTitle: 'Subscribe to get my latest content by email.',
-          buttonText: 'Subscribe',
+          title: "Subscribe to the Newsletter",
+          subTitle: "Subscribe to get my latest content by email.",
+          buttonText: "Subscribe"
         };
     }
     return (
@@ -34,24 +34,24 @@ class Signup extends React.Component {
         method="post"
         min-width="400 500 600 700 800"
         style={{
-          boxShadow: 'var(--form-shadow)',
-          backgroundColor: 'var(--bg)',
-          borderRadius: '6px',
+          boxShadow: "var(--form-shadow)",
+          backgroundColor: "var(--bg)",
+          borderRadius: "6px"
         }}
       >
         <div data-style="full">
           <div
             data-element="column"
             className="formkit-column"
-            style={{ backgroundColor: 'var(--bg-secondary)' }}
+            style={{ backgroundColor: "var(--bg-secondary)" }}
           >
             <h1
               className="formkit-header"
               data-element="header"
               style={{
-                color: 'var(--textTitle)',
-                fontSize: '20px',
-                fontWeight: 700,
+                color: "var(--textTitle)",
+                fontSize: "20px",
+                fontWeight: 700
               }}
             >
               {form.title}
@@ -59,7 +59,7 @@ class Signup extends React.Component {
             <div
               data-element="subheader"
               className="formkit-subheader"
-              style={{ color: 'var(--textNormal)' }}
+              style={{ color: "var(--textNormal)" }}
             >
               <p>{form.subTitle}</p>
             </div>
@@ -69,7 +69,7 @@ class Signup extends React.Component {
                 width="46"
                 height="46"
                 viewBox="0 0 46 46"
-                style={{ maxWidth: '100%' }}
+                style={{ maxWidth: "100%" }}
               >
                 <g fill="none" fillRule="evenodd">
                   <path
@@ -112,10 +112,10 @@ class Signup extends React.Component {
                   placeholder="Your first name"
                   type="text"
                   style={{
-                    borderColor: 'rgb(227, 227, 227)',
-                    borderRadius: '4px',
-                    color: 'rgb(0, 0, 0)',
-                    fontWeight: 400,
+                    borderColor: "rgb(227, 227, 227)",
+                    borderRadius: "4px",
+                    color: "rgb(0, 0, 0)",
+                    fontWeight: 400
                   }}
                   required
                 />
@@ -129,10 +129,10 @@ class Signup extends React.Component {
                   required
                   type="email"
                   style={{
-                    borderColor: 'rgb(227, 227, 227)',
-                    borderRadius: '4px',
-                    color: 'rgb(0, 0, 0)',
-                    fontWeight: 400,
+                    borderColor: "rgb(227, 227, 227)",
+                    borderRadius: "4px",
+                    color: "rgb(0, 0, 0)",
+                    fontWeight: 400
                   }}
                 />
               </div>
@@ -140,10 +140,10 @@ class Signup extends React.Component {
                 data-element="submit"
                 className="formkit-submit formkit-submit"
                 style={{
-                  backgroundColor: 'hsl(340, 63%, 55%)',
-                  borderRadius: '24px',
-                  color: 'white',
-                  fontWeight: 700,
+                  backgroundColor: "hsl(340, 63%, 55%)",
+                  borderRadius: "24px",
+                  color: "white",
+                  fontWeight: 700
                 }}
               >
                 <div className="formkit-spinner" />
@@ -154,9 +154,9 @@ class Signup extends React.Component {
               data-element="guarantee"
               className="formkit-guarantee"
               style={{
-                color: 'var(--textNormal)',
-                fontSize: '13px',
-                fontWeight: 400,
+                color: "var(--textNormal)",
+                fontSize: "13px",
+                fontWeight: 400
               }}
             >
               <p>I won’t send you spam.</p>
