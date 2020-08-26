@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'CodeBlock',
+    title: 'codeblocks',
     author: 'Nouran Bakry',
     description: 'Personal blog by Nouran Bakry. I explain with words and code.',
-    siteUrl: 'https://codeblock.io',
+    siteUrl: 'https://codeblocks.io',
     social: {
       twitter: '@nouranbakry_',
     },
@@ -80,7 +80,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at codeblock.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at codeblocks.io. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 
@@ -126,7 +126,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Nouran Bakry's Codeblock Blog RSS Feed",
+            title: "Nouran Bakry's codeblocks Blog RSS Feed",
           },
         ],
       },
@@ -134,8 +134,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Codeblock`,
-        short_name: `Codeblock`,
+        name: `codeblocks`,
+        short_name: `codeblocks`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,
