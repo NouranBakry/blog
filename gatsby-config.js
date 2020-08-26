@@ -9,7 +9,7 @@ module.exports = {
       twitter: "@nouranbakry_"
     }
   },
-  pathPrefix: "/",
+  pathPrefix: "/codeblocks.io",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
