@@ -1,12 +1,15 @@
 {
   "name": "codeblock",
   "private": true,
+  "engines": {"node": "12.x"},
   "description": "Codeblock",
   "version": "1.0.0",
-  "author": "Nouran Bakry",
+  "author": "Nouran Bakry <dan.abramov@me.com>",
+  "bugs": {
+    "url": "https://github.com/gaearon/codeblock.io/issues"
+  },
   "dependencies": {
-    "gatsby": "^2.24.50",
-    "gatsby-cli": "^2.12.88",
+    "gatsby": "^2.0.76",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-ebook": "^1.0.2",
     "gatsby-plugin-feed": "^2.0.8",
@@ -31,7 +34,7 @@
     "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
     "prismjs": "^1.15.0",
-    "react": "^16.13.1",
+    "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
@@ -55,9 +58,9 @@
     "start": "npm run develop",
     "build": "rm -rf public && rm -rf .cache && gatsby build",
     "now-build": "gatsby build",
+    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) codeblock.io",
     "dry": "yarn build && cp now.json public/ && cd public && now",
-    "js-to-jsx": "node src/utils/js-to-jsx",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "js-to-jsx": "node src/utils/js-to-jsx"
   },
   "husky": {
     "hooks": {

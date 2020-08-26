@@ -2,15 +2,14 @@ module.exports = {
   siteMetadata: {
     title: 'CodeBlock',
     author: 'Nouran Bakry',
-    description: 'My attempt at blogging',
+    description: 'Personal blog by Nouran Bakry. I explain with words and code.',
     siteUrl: 'https://codeblock.io',
     social: {
       twitter: '@nouranbakry_',
     },
   },
-  pathPrefix: '/codeblock.io',
+  pathPrefix: '/',
   plugins: [
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -127,7 +126,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Nouran Bakry's CodeBlock Blog",
+            title: "Nouran Bakry's Codeblock Blog RSS Feed",
           },
         ],
       },
